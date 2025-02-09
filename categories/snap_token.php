@@ -1,21 +1,29 @@
 <?php
-require 'vendor/autoload.php'; // Pastikan kamu sudah menginstall Midtrans SDK via Composer
+require 'vendor/autoload.php'; // Pastikan sudah install Midtrans SDK dengan Composer
 
 // Set konfigurasi Midtrans
 \Midtrans\Config::$serverKey = 'SB-Mid-server-vRjgBJH5GmiaZQhwcQaCz0ub';
-\Midtrans\Config::$isProduction = false; // Gunakan true jika di mode live
+\Midtrans\Config::$isProduction = false; // Ganti true jika di mode live
 \Midtrans\Config::$isSanitized = true;
 \Midtrans\Config::$is3ds = true;
 
 // Ambil data dari request
+header("Content-Type: application/json");
+
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);
 
-$order_id = uniqid(); // Generate Order ID unik
+// Pastikan data yang dikirim tidak kosong atau null
+if (!isset($input['title']) || !isset($input['price']) || !isset($input['name']) || !isset($input['email'])) {
+    echo json_encode(['error' => 'Data tidak lengkap']);
+    exit;
+}
+
+$order_id = 'ORDER-' . uniqid(); // Order ID unik
 
 $transaction_details = [
     'order_id' => $order_id,
-    'gross_amount' => (int)$input['price'], // Total harga
+    'gross_amount' => (int)$input['price'], // Total harga harus integer
 ];
 
 $customer_details = [
@@ -44,3 +52,4 @@ try {
 } catch (Exception $e) {
     echo json_encode(['error' => $e->getMessage()]);
 }
+?>
