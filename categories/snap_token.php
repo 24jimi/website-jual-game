@@ -1,5 +1,6 @@
 <?php
-require 'vendor/autoload.php'; // Pastikan sudah install Midtrans SDK dengan Composer
+require __DIR__ . '/../vendor/autoload.php';
+// Pastikan sudah install Midtrans SDK dengan Composer
 
 // Set konfigurasi Midtrans
 \Midtrans\Config::$serverKey = 'SB-Mid-server-vRjgBJH5GmiaZQhwcQaCz0ub';
