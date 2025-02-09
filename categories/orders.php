@@ -2,7 +2,6 @@
 require 'config.php';
 
 $result = $conn->query("SELECT * FROM orders ORDER BY created_at DESC");
-
 ?>
 
 <!DOCTYPE html>
