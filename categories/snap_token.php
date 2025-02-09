@@ -2,7 +2,7 @@
 require 'vendor/autoload.php'; // Pastikan kamu sudah menginstall Midtrans SDK via Composer
 
 // Set konfigurasi Midtrans
-\Midtrans\Config::$serverKey = 'YOUR_SERVER_KEY';
+\Midtrans\Config::$serverKey = 'SB-Mid-server-vRjgBJH5GmiaZQhwcQaCz0ub';
 \Midtrans\Config::$isProduction = false; // Gunakan true jika di mode live
 \Midtrans\Config::$isSanitized = true;
 \Midtrans\Config::$is3ds = true;
