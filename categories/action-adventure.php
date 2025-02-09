@@ -266,7 +266,8 @@ if (file_exists($test_image)) {
                                 <span class="rating"><i class="fas fa-star text-warning"></i> ' . $game['rating'] . '</span>
                             </div>
                             <div class="d-grid">
-                                <a href="checkout.php?title=' . urlencode($game['title']) . '&price=' . urlencode($game['price']) . '" class="btn btn-primary">Beli Sekarang</a>
+                                <a href="checkout.php?title=' . urlencode($game['title']) . '&price=' . intval(str_replace(['Rp', '.', ','], '', $game['price'])) . '" class="btn btn-primary">Beli Sekarang</a>
+
                             </div>
                         </div>
                     </div>
