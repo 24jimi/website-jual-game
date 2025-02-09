@@ -3,11 +3,6 @@ require 'config.php';
 
 $result = $conn->query("SELECT * FROM orders ORDER BY created_at DESC");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("Location: index.php");
-    exit;
-}
-
 ?>
 
 <!DOCTYPE html>
