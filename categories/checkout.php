@@ -19,7 +19,8 @@ $price = urldecode($_GET['price']);
     <div class="container mt-5">
         <h2>Checkout</h2>
         <p>Anda akan membeli: <strong><?= htmlspecialchars($title) ?></strong></p>
-        <p>Harga: <strong>Rp <?= number_format($price, 0, ',', '.') ?></strong></p>
+        <p>Harga: Rp <?= number_format((float) str_replace(['Rp', '.', ','], '', $price), 0, ',', '.') ?></p>
+
 
         <form id="payment-form" method="POST" action="process_checkout.php">
             <input type="hidden" name="snapToken" id="snapToken">
