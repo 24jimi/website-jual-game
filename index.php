@@ -173,6 +173,37 @@
         </div>
     </section>
 
+    <!-- Tambahkan di dalam <body>, sebelum footer -->
+<section class="category-section" id="discounted-games">
+    <div class="container">
+        <h2 class="text-center mb-5">Game dengan Diskon</h2>
+        <div class="row">
+            <?php
+            $discounted_games = [
+                ['name' => 'Cyberpunk 2077', 'price' => 'Rp 299.000', 'discount' => 'Rp 149.000', 'image' => 'https://source.unsplash.com/400x300/?cyberpunk', 'checkout' => 'checkout.php?game=cyberpunk'],
+                ['name' => 'Red Dead Redemption 2', 'price' => 'Rp 599.000', 'discount' => 'Rp 299.000', 'image' => 'https://source.unsplash.com/400x300/?red-dead', 'checkout' => 'checkout.php?game=rdr2'],
+                ['name' => 'The Witcher 3', 'price' => 'Rp 250.000', 'discount' => 'Rp 125.000', 'image' => 'https://source.unsplash.com/400x300/?witcher', 'checkout' => 'checkout.php?game=witcher3']
+            ];
+            
+            foreach ($discounted_games as $game) {
+                echo '<div class="col-md-4">
+                        <div class="card product-card">
+                            <img src="' . $game['image'] . '" class="card-img-top" alt="' . $game['name'] . '">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">' . $game['name'] . '</h5>
+                                <p class="text-muted"><s>' . $game['price'] . '</s></p>
+                                <p class="text-primary fw-bold">' . $game['discount'] . '</p>
+                                <a href="' . $game['checkout'] . '" class="btn btn-primary">Beli Sekarang</a>
+                            </div>
+                        </div>
+                    </div>';
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
+
     <!-- Products Section -->
     <section class="category-section" id="products">
         <div class="container">
@@ -235,37 +266,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Tambahkan di dalam <body>, sebelum footer -->
-<section class="category-section" id="discounted-games">
-    <div class="container">
-        <h2 class="text-center mb-5">Game dengan Diskon</h2>
-        <div class="row">
-            <?php
-            $discounted_games = [
-                ['name' => 'Cyberpunk 2077', 'price' => 'Rp 299.000', 'discount' => 'Rp 149.000', 'image' => 'https://source.unsplash.com/400x300/?cyberpunk', 'checkout' => 'checkout.php?game=cyberpunk'],
-                ['name' => 'Red Dead Redemption 2', 'price' => 'Rp 599.000', 'discount' => 'Rp 299.000', 'image' => 'https://source.unsplash.com/400x300/?red-dead', 'checkout' => 'checkout.php?game=rdr2'],
-                ['name' => 'The Witcher 3', 'price' => 'Rp 250.000', 'discount' => 'Rp 125.000', 'image' => 'https://source.unsplash.com/400x300/?witcher', 'checkout' => 'checkout.php?game=witcher3']
-            ];
-            
-            foreach ($discounted_games as $game) {
-                echo '<div class="col-md-4">
-                        <div class="card product-card">
-                            <img src="' . $game['image'] . '" class="card-img-top" alt="' . $game['name'] . '">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">' . $game['name'] . '</h5>
-                                <p class="text-muted"><s>' . $game['price'] . '</s></p>
-                                <p class="text-primary fw-bold">' . $game['discount'] . '</p>
-                                <a href="' . $game['checkout'] . '" class="btn btn-primary">Beli Sekarang</a>
-                            </div>
-                        </div>
-                    </div>';
-            }
-            ?>
-        </div>
-    </div>
-</section>
-
 
     <!-- Footer -->
     <footer class="footer">
