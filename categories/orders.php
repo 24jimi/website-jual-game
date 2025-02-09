@@ -2,6 +2,12 @@
 require 'config.php';
 
 $result = $conn->query("SELECT * FROM orders ORDER BY created_at DESC");
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header("Location: index.php");
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +51,5 @@ $result = $conn->query("SELECT * FROM orders ORDER BY created_at DESC");
             </tbody>
         </table>
     </div>
-    <script>
-    setTimeout(function() {
-        window.location.href = "index.php";
-    }, 3000); // Redirect setelah 3 detik
-</script>
-
 </body>
 </html>
