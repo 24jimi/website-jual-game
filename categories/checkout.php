@@ -40,17 +40,24 @@ $price = urldecode($_GET['price']);
     </div>
 
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
-<script>
+    <script>
 document.getElementById('pay-button').addEventListener('click', function () {
+    // Ambil data dari form
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const price = <?= $price ?>;
+    const title = "<?= $title ?>";
+
+    if (!name || !email) {
+        alert("Harap isi semua data!");
+        return;
+    }
+
+    // Kirim request ke snap_token.php untuk mendapatkan token pembayaran
     fetch('snap_token.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            title: "<?= $title ?>",
-            price: <?= $price ?>,
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value
-        })
+        body: JSON.stringify({ title, price, name, email })
     })
     .then(response => response.json())
     .then(data => {
@@ -63,6 +70,7 @@ document.getElementById('pay-button').addEventListener('click', function () {
     .catch(error => console.error('Error:', error));
 });
 </script>
+
 
 </body>
 </html>
