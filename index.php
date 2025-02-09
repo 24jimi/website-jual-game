@@ -185,18 +185,27 @@
                 ['name' => 'The Witcher 3', 'price' => 'Rp 250.000', 'discount' => 'Rp 125.000', 'image' => 'https://source.unsplash.com/400x300/?witcher', 'checkout' => 'checkout.php?game=witcher3']
             ];
             
-            foreach ($discounted_games as $game) {
+            foreach ($games as $game) {
                 echo '<div class="col-md-4">
-                        <div class="card product-card">
-                            <img src="' . $game['image'] . '" class="card-img-top" alt="' . $game['name'] . '">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">' . $game['name'] . '</h5>
-                                <p class="text-muted"><s>' . $game['price'] . '</s></p>
-                                <p class="text-primary fw-bold">' . $game['discount'] . '</p>
-                                <a href="' . $game['checkout'] . '" class="btn btn-primary">Beli Sekarang</a>
+                    <div class="card game-card">
+                        <div class="game-image-container">
+                            <img src="' . $game['image'] . '" class="card-img-top" alt="' . $game['title'] . '">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">' . $game['title'] . '</h5>
+                            <p class="card-text">' . $game['description'] . '</p>
+                            <p class="platform"><i class="fas fa-desktop"></i> ' . $game['platform'] . '</p>
+                            <p class="release-date"><i class="far fa-calendar-alt"></i> ' . $game['release_date'] . '</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="price">' . $game['price'] . '</span>
+                                <span class="rating"><i class="fas fa-star text-warning"></i> ' . $game['rating'] . '</span>
+                            </div>
+                            <div class="d-grid">
+                                <a href="checkout.php?title=' . urlencode($game['title']) . '&price=' . intval(str_replace(['Rp', '.', ','], '', $game['price'])) . '" class="btn btn-primary">Beli Sekarang</a>
                             </div>
                         </div>
-                    </div>';
+                    </div>
+                </div>';
             }
             ?>
         </div>
