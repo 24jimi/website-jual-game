@@ -35,7 +35,7 @@ $price = urldecode($_GET['price']);
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <button type="button" id="pay-button" class="btn btn-success">Bayar Sekarang</button>
-            <a href="index.php" class="btn btn-secondary">Kembali</a>
+            <a href="../index.php" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
 
