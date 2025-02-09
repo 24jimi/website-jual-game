@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokoKu Online - Belanja Mudah dan Terpercaya</title>
+    <title>AmbaGaming - cari game favoritmu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -202,8 +202,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h2 class="mb-4">Tentang GameStore</h2>
-                    <p class="lead">GameStore adalah platform game digital terpercaya yang menyediakan berbagai game original dengan harga terbaik.</p>
+                    <h2 class="mb-4">AmbaGamingStore</h2>
+                    <p class="lead">AmbaGamingStore adalah platform game digital terpercaya yang menyediakan berbagai game original dengan harga terbaik.</p>
                     <p>Kami menawarkan:</p>
                     <ul>
                         <li>Game Original 100%</li>
@@ -235,7 +235,7 @@
                     <p>
                         <i class="fas fa-map-marker-alt"></i> Jl. Contoh No. 123<br>
                         <i class="fas fa-phone"></i> +62 123 456 789<br>
-                        <i class="fas fa-envelope"></i> info@tokoku.com
+                        <i class="fas fa-envelope"></i> info@gameamba.com
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -250,7 +250,7 @@
             </div>
             <hr class="mt-4">
             <div class="text-center">
-                <p>&copy; <?php echo date('Y'); ?> TokoKu. All rights reserved.</p>
+                <p>&copy; <?php echo date('Y'); ?> AmbaGaming. All rights reserved.</p>
             </div>
         </div>
     </footer>
