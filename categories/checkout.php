@@ -13,7 +13,7 @@ $price = urldecode($_GET['price']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - <?= htmlspecialchars($title) ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-w0psZSh9XiCObQSy"></script>
 </head>
 <body>
     <div class="container mt-5">
