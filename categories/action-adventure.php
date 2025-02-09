@@ -267,7 +267,6 @@ if (file_exists($test_image)) {
                             </div>
                             <div class="d-grid">
                                 <a href="checkout.php?title=' . urlencode($game['title']) . '&price=' . intval(str_replace(['Rp', '.', ','], '', $game['price'])) . '" class="btn btn-primary">Beli Sekarang</a>
-
                             </div>
                         </div>
                     </div>
