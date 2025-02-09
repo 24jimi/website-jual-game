@@ -38,35 +38,30 @@ $price = urldecode($_GET['price']);
         </form>
     </div>
 
-    <script>
-        document.getElementById('pay-button').addEventListener('click', function () {
-            let name = document.getElementById('name').value;
-            let email = document.getElementById('email').value;
-            if (!name || !email) {
-                alert('Harap isi nama dan email terlebih dahulu!');
-                return;
-            }
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
+<script>
+document.getElementById('pay-button').addEventListener('click', function () {
+    fetch('snap_token.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            title: "<?= $title ?>",
+            price: <?= $price ?>,
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.token) {
+            snap.pay(data.token);
+        } else {
+            alert("Gagal mendapatkan token pembayaran!");
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>
 
-            fetch('snap_token.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    title: "<?= $title ?>",
-                    price: "<?= $price ?>",
-                    name: name,
-                    email: email
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                snap.pay(data.token, {
-                    onSuccess: function (result) {
-                        document.getElementById('snapToken').value = data.token;
-                        document.getElementById('payment-form').submit();
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
