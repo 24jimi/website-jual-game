@@ -124,13 +124,27 @@
             color: #00cc7d !important;
             transform: translateY(-2px);
         }
+
+        .logo-icon {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1.5rem;
+    color: #00ff9d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.navbar-brand:hover .logo-icon {
+    transform: rotate(360deg) scale(1.2);
+}
+
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="#">AmbaGaming</a>
+        <a class="navbar-brand" href="#">
+    <span class="logo-icon"><i class="fas fa-gamepad"></i></span> AmbaGaming</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
