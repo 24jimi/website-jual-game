@@ -45,5 +45,11 @@ $result = $conn->query("SELECT * FROM orders ORDER BY created_at DESC");
             </tbody>
         </table>
     </div>
+    <script>
+    setTimeout(function() {
+        window.location.href = "index.html";
+    }, 3000); // Redirect setelah 3 detik
+</script>
+
 </body>
 </html>
