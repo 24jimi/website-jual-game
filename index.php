@@ -137,6 +137,77 @@
     transform: rotate(360deg) scale(1.2);
 }
 
+@keyframes glitch {
+        0% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
+        50% { text-shadow: -2px -2px #ff0000, 2px 2px #00ff00; }
+        100% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
+    }
+    
+    .glitch {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #00ff9d;
+        position: relative;
+        animation: glitch 0.5s infinite alternate;
+    }
+    
+    .neon-text {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-shadow: 0 0 5px #00ff9d, 0 0 10px #00ff9d;
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 0 10px #00ff9d; }
+        50% { box-shadow: 0 0 20px #00ff9d; }
+        100% { box-shadow: 0 0 10px #00ff9d; }
+    }
+    
+    .pulse-button {
+        background-color: #00ff9d;
+        border: none;
+        color: #0f1923;
+        font-weight: bold;
+        animation: pulse 1.5s infinite;
+    }
+    
+    .pulse-button:hover {
+        background-color: #00cc7d;
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+    
+    /* Animasi Partikel */
+    .particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    
+    .particles::before, .particles::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(0,255,157,0.5) 10%, rgba(0,255,157,0) 80%);
+        border-radius: 50%;
+        animation: moveParticles 5s linear infinite;
+    }
+    
+    .particles::after {
+        animation-duration: 7s;
+    }
+    
+    @keyframes moveParticles {
+        0% { transform: translate(0, 0); opacity: 1; }
+        50% { transform: translate(100px, 200px); opacity: 0.5; }
+        100% { transform: translate(-100px, -200px); opacity: 1; }
+    }
+
     </style>
 </head>
 <body>
@@ -165,13 +236,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container text-center">
-            <h1 class="display-4">Selamat Datang di AmbaGaming</h1>
-            <p class="lead">Temukan berbagai game terbaik dengan harga bersaing</p>
-            <a href="#products" class="btn btn-primary btn-lg">Jelajahi Game</a>
-        </div>
-    </section>
+<section class="hero-section" id="home">
+    <div class="container text-center position-relative">
+        <h1 class="display-4 glitch" data-text="Selamat Datang di AmbaGaming">Selamat Datang di AmbaGaming</h1>
+        <p class="lead neon-text">Temukan berbagai game terbaik dengan harga bersaing</p>
+        <a href="#products" class="btn btn-primary btn-lg pulse-button">Jelajahi Game</a>
+        
+        <!-- Animasi Partikel -->
+        <div class="particles"></div>
+    </div>
+</section>
+
 
 
     <!-- Products Section -->
