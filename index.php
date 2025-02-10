@@ -137,75 +137,66 @@
     transform: rotate(360deg) scale(1.2);
 }
 
-@keyframes glitch {
-        0% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
-        50% { text-shadow: -2px -2px #ff0000, 2px 2px #00ff00; }
-        100% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
+.hero-section {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(135deg, #0f1923, #1a2634);
+        overflow: hidden;
     }
     
-    .glitch {
+    .gaming-logo {
+        font-size: 4rem;
+        color: #00ff9d;
+        margin-bottom: 10px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    .hero-title {
         font-size: 3rem;
         font-weight: bold;
-        color: #00ff9d;
-        position: relative;
-        animation: glitch 0.5s infinite alternate;
-    }
-    
-    .neon-text {
-        font-size: 1.5rem;
         color: #ffffff;
-        text-shadow: 0 0 5px #00ff9d, 0 0 10px #00ff9d;
+        text-transform: uppercase;
+        animation: slideUp 1.5s ease-out;
     }
     
-    @keyframes pulse {
-        0% { box-shadow: 0 0 10px #00ff9d; }
-        50% { box-shadow: 0 0 20px #00ff9d; }
-        100% { box-shadow: 0 0 10px #00ff9d; }
+    .highlight {
+        color: #00ff9d;
+        text-shadow: 0 0 10px #00ff9d;
     }
     
-    .pulse-button {
+    .hero-subtitle {
+        font-size: 1.2rem;
+        color: #ccc;
+        animation: fadeIn 2s ease-in;
+    }
+    
+    .smooth-button {
         background-color: #00ff9d;
         border: none;
         color: #0f1923;
         font-weight: bold;
-        animation: pulse 1.5s infinite;
+        padding: 12px 24px;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .pulse-button:hover {
-        background-color: #00cc7d;
-        transform: scale(1.1);
-        transition: 0.3s;
+    .smooth-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0, 255, 157, 0.5);
     }
     
-    /* Animasi Partikel */
-    .particles {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        pointer-events: none;
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
     
-    .particles::before, .particles::after {
-        content: '';
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: radial-gradient(circle, rgba(0,255,157,0.5) 10%, rgba(0,255,157,0) 80%);
-        border-radius: 50%;
-        animation: moveParticles 5s linear infinite;
-    }
-    
-    .particles::after {
-        animation-duration: 7s;
-    }
-    
-    @keyframes moveParticles {
-        0% { transform: translate(0, 0); opacity: 1; }
-        50% { transform: translate(100px, 200px); opacity: 0.5; }
-        100% { transform: translate(-100px, -200px); opacity: 1; }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 
     </style>
@@ -238,12 +229,10 @@
     <!-- Hero Section -->
 <section class="hero-section" id="home">
     <div class="container text-center position-relative">
-        <h1 class="display-4 glitch" data-text="Selamat Datang di AmbaGaming">Selamat Datang di AmbaGaming</h1>
-        <p class="lead neon-text">Temukan berbagai game terbaik dengan harga bersaing</p>
-        <a href="#products" class="btn btn-primary btn-lg pulse-button">Jelajahi Game</a>
-        
-        <!-- Animasi Partikel -->
-        <div class="particles"></div>
+        <div class="gaming-logo"><i class="fas fa-gamepad"></i></div>
+        <h1 class="display-4 hero-title">Selamat Datang di <span class="highlight">AmbaGaming</span></h1>
+        <p class="lead hero-subtitle">Temukan berbagai game terbaik dengan harga bersaing</p>
+        <a href="#products" class="btn btn-primary btn-lg smooth-button">Jelajahi Game</a>
     </div>
 </section>
 
