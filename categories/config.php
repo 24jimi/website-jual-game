@@ -1,7 +1,7 @@
 <?php
 $host = "sql105.infinityfree.com";
 $user = "f0_38731845"; // Ganti jika ada username lain
-$pass = "(Your vPanel Password)"; // Ganti jika ada password
+$pass = "immortals2426"; // Ganti jika ada password
 $dbname = "if0_38731845_amba_gaming";
 
 // Buat koneksi
