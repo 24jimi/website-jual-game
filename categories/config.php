@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root"; // Ganti jika ada username lain
-$pass = ""; // Ganti jika ada password
-$dbname = "amba_gaming";
+$host = "sql105.infinityfree.com";
+$user = "f0_38731845"; // Ganti jika ada username lain
+$pass = "(Your vPanel Password)"; // Ganti jika ada password
+$dbname = "if0_38731845_amba_gaming";
 
 // Buat koneksi
 $conn = new mysqli($host, $user, $pass, $dbname);
